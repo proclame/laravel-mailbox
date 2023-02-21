@@ -1,9 +1,8 @@
 # Laravel Mailbox 📬
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/beyondcode/laravel-mailbox.svg?style=flat-square)](https://packagist.org/packages/beyondcode/laravel-mailbox)
-[![Build Status](https://img.shields.io/travis/beyondcode/laravel-mailbox/master.svg?style=flat-square)](https://travis-ci.org/beyondcode/laravel-mailbox)
-[![Quality Score](https://img.shields.io/scrutinizer/g/beyondcode/laravel-mailbox.svg?style=flat-square)](https://scrutinizer-ci.com/g/beyondcode/laravel-mailbox)
-[![Total Downloads](https://img.shields.io/packagist/dt/beyondcode/laravel-mailbox.svg?style=flat-square)](https://packagist.org/packages/beyondcode/laravel-mailbox)
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/joelharkes/laravel-mailbox.svg?style=flat-square)](https://packagist.org/packages/beyondcode/laravel-mailbox)
+[![Build status](https://github.com/eurides-eu/laravel-mailbox/actions/workflows/run-tests.yml/badge.svg)](https://github.com/eurides-eu/laravel-mailbox/actions/workflows/run-tests.yml)
+[![Total Downloads](https://img.shields.io/packagist/dt/joelharkes/laravel-mailbox.svg?style=flat-square)](https://packagist.org/packages/beyondcode/laravel-mailbox)
 
 Handle incoming emails in your Laravel application.
 
@@ -26,7 +25,7 @@ If you want to learn how to create reusable PHP packages yourself, take a look a
 You can install the package via composer:
 
 ```bash
-composer require beyondcode/laravel-mailbox
+composer require joelharkes/laravel-mailbox
 ```
 
 ## Usage
@@ -53,7 +52,8 @@ If you discover any security related issues, please email marcel@beyondco.de ins
 
 ## Credits
 
-- [Marcel Pociot](https://github.com/mpociot)
+- [Marcel Pociot](https://github.com/mpociot) => original founder
+- [Joel Harkes](https://github.com/joelharkes) => for this fork
 - [All Contributors](../../contributors)
 
 ## License
