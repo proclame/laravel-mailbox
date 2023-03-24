@@ -8,27 +8,22 @@ use Illuminate\Support\Facades\Validator;
 
 class MailCareRequest extends FormRequest
 {
-    public function validator()
+    public function rules()
     {
-        return Validator::make([], []);
+        return [
+            "content_type" => "required|in:message/rfc2822",
+        ];
+    }
+
+    public function prepareForValidation()
+    {
+        $this->merge([
+            "content_type" => $this->headers->get("Content-type"),
+        ]);
     }
 
     public function email()
     {
-        return InboundEmail::fromMessage($this->getRawRequest());
-    }
-
-    protected function getRawRequest(): string
-    {
-        $rawBodyFromApache = file_get_contents('php://input');
-        $headersFromApache = getallheaders();
-        if($rawBodyFromApache && $headersFromApache !== false && count($headersFromApache)> 0){
-            $rawHeader = "";
-            foreach($headersFromApache as $key => $value){
-                $rawHeader .= "{$key}: {$value}\r\n";
-            }
-            return "{$rawHeader}\r\n{$rawBodyFromApache}";
-        }
-        return $this->__toString();
+        return InboundEmail::fromMessage($this->getContent());
     }
 }

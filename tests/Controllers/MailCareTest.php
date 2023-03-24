@@ -42,16 +42,9 @@ class MailCareTest extends TestCase
 
     private function callWithEmail(string $method, string $url, Email $message): \Illuminate\Testing\TestResponse
     {
-        $raw = $message->toString();
-        $parts = explode("\r\n\r\n", $raw);
-        $headerRaw = array_shift($parts);
-        $bodyRaw = implode("\r\n\r\n", $parts);
-        $headers = [];
-        foreach(explode("\r\n", $headerRaw) as $headerRawLine){
-            list($name, $value) = explode(': ',$headerRawLine);
-            $headers[$name] = $value;
-        }
-        $server = $this->transformHeadersToServerVars($headers);
-        return $this->call($method, $url,[],[],[], $server, $bodyRaw);
+        $server = $this->transformHeadersToServerVars([
+            "Content-Type" => 'message/rfc2822'
+        ]);
+        return $this->call($method, $url,[],[],[], $server,  $message->toString());
     }
 }
