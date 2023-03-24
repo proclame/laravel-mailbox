@@ -6,6 +6,7 @@ namespace BeyondCode\Mailbox\Tests\Controllers;
 use BeyondCode\Mailbox\Facades\Mailbox;
 use BeyondCode\Mailbox\InboundEmail;
 use BeyondCode\Mailbox\Tests\TestCase;
+use Illuminate\Testing\TestResponse;
 use Symfony\Component\Mime\Email;
 
 class MailCareTest extends TestCase
@@ -40,7 +41,7 @@ class MailCareTest extends TestCase
             ->assertStatus(200);
     }
 
-    private function callWithEmail(string $method, string $url, Email $message): \Illuminate\Testing\TestResponse
+    private function callWithEmail(string $method, string $url, Email $message): TestResponse
     {
         $server = $this->transformHeadersToServerVars([
             "Content-Type" => 'message/rfc2822'
