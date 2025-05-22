@@ -34,13 +34,10 @@ jobs:
                 include:
                     - laravel: 10.*
                       testbench: 8.*
-                      phpunit: 9.*
                     - laravel: 9.*
                       testbench: 7.*
-                      phpunit: 9.*
                     - laravel: 11.*
                       testbench: 9.*
-                      phpunit: 10.*
         name: P${{ matrix.php }} - L${{ matrix.laravel }} - ${{ matrix.stability }} - ${{ matrix.os }}
 
         steps:
