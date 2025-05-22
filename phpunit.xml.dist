@@ -8,16 +8,16 @@
             <directory>tests</directory>
         </testsuite>
     </testsuites>
-    <coverage>
+    <source>
         <include>
-            <directory suffix=".php">src/</directory>
+            <directory>src</directory>
         </include>
-    </coverage>
+    </source>
     <logging>
         <junit outputFile="build/report.junit.xml"/>
-        <coverage-html outputDirectory="build/coverage"/>
-        <coverage-text outputFile="build/coverage.txt"/>
-        <coverage-clover outputFile="build/logs/clover.xml"/>
+        <html outputDirectory="build/coverage"/>
+        <text outputFile="build/coverage.txt"/>
+        <clover outputFile="build/logs/clover.xml"/>
     </logging>
     <php>
         <env name="MAIL_MAILER" value="log"/>
